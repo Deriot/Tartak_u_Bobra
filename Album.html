@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Pasja wędkarza</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Pasja wędkarza - strona poświęcona miłośnikom wędkarstwa. Znajdziesz tutaj porady, artykuły i galerie związane z wędkarstwem.">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div id="masthead"></div>
+
+    <div id="top_nav">
+        <div id="top_nav_box">
+            <div class="path">Aktualna ścieżka</div>
+            <div class="link_nav"><a href="Album.html"> Album </a></div>
+            <div class="link_nav"><a href="Porady.html"> Porady </a></div>
+            <div class="link_nav"><a href="Galeria.html"> Galeria </a></div>
+        </div>
+    </div>
+
+    <div id="container">
+        <div id="left_col">
+            <div class="module">
+                <div class="module_title">Menu</div>
+                <div class="module_content">
+                    <div class="link"><a href="index.html"> Strona główna </a></div>
+                    <div class="link_selected active"><a href="Album.html"> Album </a></div>
+                    <div class="link"><a href="Porady.html"> Porady </a></div>
+                    <div class="sub_link"><a href="Porady1.html"> Sub_Porady 1 </a></div>
+                    <div class="sub_link"><a href="Porady2.html"> Sub_Porady 2 </a></div>
+                    <div class="sub_sub_link"><a href="Porady2_1.html"> sub_sub_Porady 2 </a></div>
+                    <div class="link"><a href="Galeria.html"> Galeria </a></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page_content">
+            <div class="album-container">
+                <div class="thumbnails">
+                    <img src="img/Album/Rybka_1.jpg" class="thumb" alt="Rybka 1" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_2.jpg" class="thumb" alt="Rybka 2" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_3.jpg" class="thumb" alt="Rybka 3" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_4.jpg" class="thumb" alt="Rybka 4" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_5.jpg" class="thumb" alt="Rybka 5" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_6.jpg" class="thumb" alt="Rybka 6" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_7.jpg" class="thumb" alt="Rybka 7" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_8.jpg" class="thumb" alt="Rybka 8" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_9.jpg" class="thumb" alt="Rybka 9" onclick="openModal(this)">
+                    <img src="img/Album/Rybka_10.jpg" class="thumb" alt="Rybka 10" onclick="openModal(this)">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="czysc"></div>
+    <div id="footer">
+        <div class="footer_box">
+            <div class="link_foot"><a href=""> Strona główna </a></div>
+            <div class="link_foot"><a href=""> Kontakt </a></div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-img" src="" alt="Large Image">
+        </div>
+    </div>
+
+    <script>
+        function openModal(element) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modal-img");
+
+            if (element.alt === "Rybka 1" || element.alt === "Rybka 10") {
+                // Ustawienia dla animacji powiększania i obracania tylko dla Rybka 1
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Klasa z animacją
+                setTimeout(function () {
+                    imgClone.classList.add('animate');
+                    imgClone.style.transform = 'scale(3.33)';
+                    imgClone.style.top = '50%';
+                    imgClone.style.left = '50%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    document.body.removeChild(imgClone);
+                }, 510);
+            }else if(element.alt === "Rybka 2") {
+                // Ustawienia dla animacji powiększania i obracania tylko dla Rybka 1
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Klasa z animacją
+                setTimeout(function () {
+                    imgClone.classList.add('animate2');
+                    imgClone.style.transform = 'scale(3.33)';
+                    imgClone.style.top = '50%';
+                    imgClone.style.left = '50%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    document.body.removeChild(imgClone);
+                }, 510);
+            }else if(element.alt === "Rybka 3") {
+                // Ustawienia dla animacji powiększania i obracania tylko dla Rybka 1
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Klasa z animacją
+                setTimeout(function () {
+                    imgClone.classList.add('animate3');
+                    imgClone.style.transform = 'scale(3.33)';
+                    imgClone.style.top = '20%';
+                    imgClone.style.left = '30%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    document.body.removeChild(imgClone);
+                }, 510);
+            }else if(element.alt === "Rybka 4") {
+                // Ustawienia dla animacji powiększania i obracania tylko dla Rybka 1
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Klasa z animacją
+                setTimeout(function () {
+                    imgClone.classList.add('animate4');
+                    imgClone.style.transform = 'scale(2.33)';
+                    imgClone.style.top = '20%';
+                    imgClone.style.left = '30%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    document.body.removeChild(imgClone);
+                }, 510);
+            }else if(element.alt === "Rybka 5") {
+                // Ustawienia dla animacji powiększania i obracania tylko dla Rybka 1
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Klasa z animacją
+                setTimeout(function () {
+                    imgClone.classList.add('animate5');
+                    imgClone.style.transform = 'scale(3.33)';
+                    imgClone.style.top = '20%';
+                    imgClone.style.left = '30%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    document.body.removeChild(imgClone);
+                }, 510);
+            } else if(element.alt === "Rybka 6") {
+                // Ustawienia dla animacji powiększania i obracania tylko dla Rybka 1
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Klasa z animacją
+                setTimeout(function () {
+                    imgClone.classList.add('animate6');
+                    imgClone.style.transform = 'scale(3.33)';
+                    imgClone.style.top = '20%';
+                    imgClone.style.left = '30%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    document.body.removeChild(imgClone);
+                }, 510);
+            }else {
+                var rect = element.getBoundingClientRect();
+                var imgClone = element.cloneNode();
+                imgClone.style.position = 'fixed';
+                imgClone.style.top = rect.top + 'px';
+                imgClone.style.left = rect.left + 'px';
+                imgClone.style.width = rect.width + 'px';
+                imgClone.style.height = rect.height + 'px';
+                imgClone.style.transition = 'transform 0.5s ease, top 0.5s ease, left 0.5s ease, width 0.5s ease, height 0.5s ease';
+                document.body.appendChild(imgClone);
+
+                // Dodajemy klasę z animacją
+                setTimeout(function () {
+
+                    imgClone.classList.add('animate7');
+                    imgClone.style.transform = 'scale(3.33)';
+                    imgClone.style.top = '40%';
+                    imgClone.style.left = '50%';
+                    imgClone.style.width = '1000px';
+                    imgClone.style.height = '500px';
+                    imgClone.style.transform = 'translate(-50%, -50%)';
+                }, 10);
+
+                setTimeout(function () {
+                    modal.style.display = "block";
+                    modalImg.src = element.src;
+                    
+                    document.body.removeChild(imgClone);
+
+                    
+                }, 510);
+            }
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Zamknięcie po kliknięciu poza zdjęciem
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
